@@ -1,8 +1,38 @@
-﻿@{
+﻿@model ProjectModel;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="text-center">
+    <p>This is a demonstration project showing some aspects of secure programing. If using for generating project plans you should expect strange behaviour.</p>
+</div>
+
+<div class="text-center">
+    <form asp-action="save">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Title" class="control-label col-md-2"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Interval" class="control-label"></label>
+            <input asp-for="Interval" class="form-control" />
+            <span asp-validation-for="Interval" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Запази" class="btn btn-outline-primary" /> |
+            <a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary">Изчисти</a>
+        </div>
+    </form>
 </div>
